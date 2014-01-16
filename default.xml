@@ -4,14 +4,14 @@
   <remote name="origin"
            fetch=".." />
 
-  <default revision="refs/heads/coron-4.2"
+  <default revision="refs/heads/coron-mtk-4.0"
            remote="origin"
            sync-j="4" />
 
   <project path="manifest" name="baidurom/manifest" />
-  <project path="build" name="baidurom/build"/>
-  <project path="tools" name="baidurom/tools"/>
-  <project path="reference" name="baidurom/reference"/>
+  <project path="build" name="baidurom/build" revision="coron-4.2"/>
+  <project path="tools" name="baidurom/tools" revision="coron-4.0"/>
+  <project path="reference" name="baidurom/reference" revision="coron-4.0"/>
   <project path="baidu/overlay" name="baidurom/overlay" />
-  <project path="devices/p6_t00" name="baidurom/devices-p6_t00" />
+  <project path="devices/v970" name="baidurom/devices-v970" />
 </manifest>
