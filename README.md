@@ -85,6 +85,7 @@ Coron是一个致力于开源ROM制作的项目，开源了制作百度云ROM的
     source build/envsetup.sh
     mkdir -p devices/gn
     cd devices/gn
+    makeconfig
 
 这些命令将会初始化环境变量后，创建了gn的机型目录，后续的移植基本都在机型目录完成。
 
