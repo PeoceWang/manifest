@@ -11,7 +11,7 @@
   <project path="manifest" name="baidurom/manifest" />
   <project path="build" name="baidurom/build" revision="coron-4.2"/>
   <project path="tools" name="baidurom/tools"/>
-  <project path="reference" name="baidurom/reference"/>
+  <project path="reference" name="baidurom/reference" revision="coron-4.2"/>
   <project path="baidu/overlay" name="baidurom/overlay" />
   <project path="devices/lt26i" name="baidurom/devices-lt26i" />
   <project path="devices/onex" name="baidurom/devices-onex" />
