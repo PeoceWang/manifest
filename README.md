@@ -63,17 +63,17 @@ Coron是一个致力于开源ROM制作的项目，开源了制作百度云ROM的
 ===
 <b>1) 初始化开发环境</b>
 
-以Galaxy Nexus为例，下载完代码以后，在开源项目根目录，执行以下命令：
+以Galaxy Nexus为例，下载完代码以后，在开源项目根目录，执行以下命令。
+这些命令将会初始化环境变量后，创建了gn的机型目录，后续的移植基本都在机型目录完成。
 
     source build/envsetup.sh
     mkdir -p devices/gn
     cd devices/gn
 
-这些命令将会初始化环境变量后，创建了gn的机型目录，后续的移植基本都在机型目录完成。
-
 <b>2) 新建开发工程</b>
 
-将手机ROOT以后，取到可用的recovery.img或者recovery.fstab，放到机型根目录，执行以下命令，这些命令将会创建一个新的机型工程。
+将手机ROOT以后，取到可用的recovery.img或者recovery.fstab，放到机型根目录，执行以下命令。
+这些命令将会创建一个新的机型工程。
 
     makeconfig
     make newproject
