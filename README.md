@@ -59,7 +59,66 @@ Coron是一个致力于开源ROM制作的项目，开源了制作百度云ROM的
     fatal: error [Errno 101] Network is unreachable
 
 
-4. 代码提交
+4. 百度云ROM移植
+===
+<b>1) 初始化开发环境</b>
+
+以Galaxy Nexus为例，下载完代码以后，在开源项目根目录，执行以下命令。
+这些命令将会初始化环境变量后，创建了gn的机型目录，后续的移植基本都在机型目录完成。
+
+    source build/envsetup.sh
+    mkdir -p devices/gn
+    cd devices/gn
+
+<b>2) 新建开发工程</b>
+
+将手机ROOT以后，取到可用的recovery.img或者recovery.fstab，放到机型根目录，执行以下命令。
+这些命令将会创建一个新的机型工程。
+
+    makeconfig
+    make newproject
+
+<b>3) 自动Patch</b>
+
+自动执行bringup，将百度云ROM涉及到起机的改动注入厂商的代码中，然后编译整个工程，生成一个卡刷包。
+
+    make bringup
+    make
+
+如果顺利，那么不会产生编译错误，卡刷包也能刷入手机正常使用。这时，可以执行以下命令，将起机后的其他百度云ROM的改动自动注入到厂商的代码中。
+
+    make patchall
+    make
+
+<b>4) 解决冲突</b>
+
+执行自动Patch时，可能会存在代码合并冲突。冲突会在目标文件中以下面的形式标注出来，开发者需要在目标文件中解决完这些冲突，才能正确编译。
+
+    <<<<<<< VENDOR
+    原厂的代码块
+    =======
+    需要改动的代码块
+    >>>>>>> BOSP
+
+大多数冲突都比较好解决，开发者很容易在原厂的代码块和需要改动的代码块中做出取舍，应该保留哪一个。
+但有一些冲突，需要开发者对 Android 的逻辑有一定的了解。
+
+具体机型一般有特定的问题，等待开发者去解决，以下文档可以帮助开发者解决一些实际问题：
+
+《Developer-Guide.pdf》，《Details-to-Smali-Development.pdf》
+
+
+5. 版本升级
+===
+对于已有的机型，可以自动化进行版本升级。执行以下命令:
+
+    make upgrade FROM=XX
+
+通过FROM参数指定升级的起始版本，即所开发机型当前的ROM版本。譬如FROM=44，表示需要从ROM44升级。
+当百度云发布了ROM45后，执行该命令便能自动升级到ROM45。
+
+
+6. 代码提交
 ===
 代码提交有2种方式：
 
@@ -76,46 +135,4 @@ Coron是一个致力于开源ROM制作的项目，开源了制作百度云ROM的
 对于具备GitHub账户的开发者，可以利用GitHub提供的Pull Request方式，将代码改动以Code Review的形式，发送给开源项目的管理者。待Code Review通过后，代码改动将会合并到提交分支。
 
 为了能够提交代码，开发者需首先注册GitHub账户，将baidurom的Git库Fork到自己的账户下；然后，对Git库进行代码修改，发送Pull Request。最后，在开源项目的管理者收到提交请求时，会对代码进行Code Review，如果符合准入标准，就会将改动代码合并到主干分支中。
-
-
-5. 百度云ROM移植
-===
-以Galaxy Nexus为例，下载完代码以后，在开源项目根目录，执行以下命令：
-
-    source build/envsetup.sh
-    mkdir -p devices/gn
-    cd devices/gn
-    makeconfig
-
-这些命令将会初始化环境变量后，创建了gn的机型目录，后续的移植基本都在机型目录完成。
-
-将手机ROOT以后，取到可用的boot.img和recovery.img，放到机型根目录，执行以下命令：
-
-    make newproject
-    make bringup
-    make
-
-这些命令将会创建一个新的机型工程，自动执行bringup，将百度云ROM涉及到起机的改动注入厂商的代码中，然后编译整个工程，生成一个卡刷包。
-
-如果顺利，那么不会产生编译错误，卡刷包也能刷入手机正常使用，这时，可以执行后续命令，将起机后的其他百度云ROM的改动自动注入到厂商的代码中。
-
-    make patchall
-    make
-
-具体机型一般有特定的问题，等待开发者去解决，以下文档可以帮助开发者解决一些实际问题：
-
-《Developer-Guide.pdf》，《Details-to-Smali-Development.pdf》
-
-
-6. 版本升级
-===
-对于已有的机型，可以自动化进行版本升级．按照如下步骤:
-
-    1) 更新可用的升级补丁，升级补丁以XML的形式存放在referece/upgrade/目录中。
-
-    2) 在机型的Makefile文件中配置两个参数: 
-       ROM_VERSION 当前的所移植机型的ROM 版本; 
-       UPGRADE_VERSION 需要升级到的ROM 版本．如果没有指定则默认升级到可用的最新版
-
-    3) make upgrade。自动将补丁的改动注入的厂商代码中．
 
