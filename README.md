@@ -2,16 +2,11 @@
 ====
 <b>Coron</b>是一个致力于开源ROM制作的项目，开源了制作百度云ROM的所有工具和部分示例机型。采用Apache License 2.0协议，为乐于分享的开发者提供最大的自由度。
 
-开源项目的访问网址是  https://github.com/baidurom  
-，创立纪元是二零一三年八月八日。
+开源项目的访问网址是 https://github.com/baidurom ，创立纪元是二零一三年八月八日。旨在让更多的开发者体验百度云ROM的制作过程，感受其间简洁、细节的情怀。
 
-Coron，意味着与开发者合作而生的ROM，<b><u>CO</u></b>-operation <b><u>ROm</u></b>；
-
-Coron, 意味着百度云ROM强大的云服务能力，<b><u>RO</u></b>m <b><u>O</u></b>ver <b><u>C</u></b>loud；
-
-Coron, 也是一个清新纯净的小岛。
-
-开源项目旨在让更多的开发者体验百度云ROM的制作过程，感受其间简洁、细节的情怀。
+<b>Coron</b>，意味着与开发者合作而生的ROM，<b>CO</b>-operation <b>ROm</b>；
+<b>Coron</b>, 意味着百度云ROM强大的云服务能力，<b>RO</b>m <b>O</b>ver <b>C</b>loud；
+<b>Coron</b>, 也是一个清新纯净的小岛。
 
 
 2. 分支命名
