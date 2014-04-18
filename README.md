@@ -15,18 +15,21 @@
 ===
 开源项目的分支命名基于coron, 对于单卡机型, 后缀为Android 版本； 对于双卡机型, 后缀为双卡平台与Andorid版本的结合。
 
-已有单卡分支有coron-4.0, coron-4.1, coron-4.2，已有的双卡分支有coron-mtk-4.0, coron-mtk-4.2
+已有单卡分支有coron-4.0, coron-4.1, coron-4.2, 已有的双卡分支有coron-mtk-4.0, coron-mtk-4.2。 分支对应到可以制作的ROM版本, 譬如, 厂商原来的系统是Android 4.2的单卡版本, 那么, 就推荐使用coron-4.2分支来移植百度云ROM。
 
-开源项目的Git 库主要涉及到6 个部分: 
+开源项目的目录结构如下所示: 
 
-    1) manifest.git：开源项目的Repo 管理清单文件，以及教程和文档。
-    2) build.git：编译脚本，包括基于Makfile 编译环境的构建脚本。
-    3) tools.git：工具，包括反编译/编译，解包/打包的脚本，以及其他一些实用工具。
-    4) overlay.git：资源覆盖，包括Baidu 对原生Android 资源文件的修改。
-    5) reference.git : 参考代码，包括aosp, bosp 的反编译代码。
-    6) 示例机型的Git 库：已有devices-u930.git, devices-lt26i.git, devices-onex.git 这些机型移植的修改案例。
+    coron
+     +-- manifest      开源项目的Repo 管理清单文件，以及教程和文档
+     +-- build         编译脚本，包括基于Makfile 编译环境的构建脚本
+     +-- tools         工具，包括反编译/编译，解包/打包的脚本，以及其他一些实用工具
+     +-- reference     参考代码，包括aosp, bosp的反编译代码，每一次发布都会更新这个目录
+     +-- baidu
+          +-- overlay  资源覆盖，包括Baidu 对原生Android 资源文件的修改
+     +-- devices       所有的开发机型
+          +-- demo     示例机型，作为演示使用
+          +-- p6       实际机型HuaWei P6
 
-分支对应到可以制作的ROM版本, 譬如, 厂商原来的系统是Android 4.2的单卡版本, 那么, 就推荐使用coron-4.2分支来移植百度云ROM。
 
 
 3. 代码下载
