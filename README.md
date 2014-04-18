@@ -28,7 +28,7 @@
           +-- overlay  资源覆盖，包括Baidu 对原生Android 资源文件的修改
      +-- devices       所有的开发机型
           +-- demo     示例机型，作为演示使用
-          +-- p6       实际机型HuaWei P6
+          +-- p6       实际机型HuaWei P6，不同分支的实际机型不同
 
 
 
