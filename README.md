@@ -1,9 +1,15 @@
 1. 介绍
 ====
-Coron是一个致力于开源ROM制作的项目，开源了制作百度云ROM的所有工具和部分示例机型。采用Apache License 2.0协议，为乐于分享的开发者提供最大的自由度。
+<b>Coron</b>是一个致力于开源ROM制作的项目，开源了制作百度云ROM的所有工具和部分示例机型。采用Apache License 2.0协议，为乐于分享的开发者提供最大的自由度。
 
-开源项目的访问网址是https://github.com/baidurom
-，创立纪元是二零一三年八月八日。Coron，意味着与开发者合作而生的ROM，CO-operation ROm；也意味着百度云ROM强大的云服务能力，ROm Over Cloud；同时，coron也是一个清新纯净的小岛。
+开源项目的访问网址是  https://github.com/baidurom  
+，创立纪元是二零一三年八月八日。
+
+Coron，意味着与开发者合作而生的ROM，<b><u>CO</u></b>-operation <b><u>ROm</u></b>；
+
+Coron, 意味着百度云ROM强大的云服务能力，<b><u>RO</u></b>m <b><u>O</u></b>ver <b><u>C</u></b>loud；
+
+Coron, 也是一个清新纯净的小岛。
 
 开源项目旨在让更多的开发者体验百度云ROM的制作过程，感受其间简洁、细节的情怀。
 
@@ -11,7 +17,9 @@ Coron是一个致力于开源ROM制作的项目，开源了制作百度云ROM的
 2. 分支命名
 ===
 开源项目的分支命名基于coron，对于单卡机型，后缀为Android 版本；对于双卡机型，后缀为双卡平台与Andorid版本的结合。
+
 已有单卡分支有coron-4.0, coron-4.1, coron-4.2，已有的双卡分支有coron-mtk-4.0, coron-mtk-4.2
+
 这些分支对应到可以制作的ROM版本，譬如，厂商原来的系统是Android 4.2的单卡版本，那么，就推荐使用coron-4.2分支来移植百度云ROM。
 
 开源项目的Git 库主要涉及到6 个部分：
@@ -47,11 +55,13 @@ Coron是一个致力于开源ROM制作的项目，开源了制作百度云ROM的
 
     source build/envsetup.sh
 
-将手机ROOT以后，取到可用的recovery.img或者recovery.fstab，放到机型根目录，执行以下命令。
-这些命令将会创建一个新的机型工程，后续的移植基本都在机型目录完成。
+创建一个新的机型工程的目录(以demo为例)，后续的移植都在机型目录完成。
 
     mkdir -p devices/demo
     cd devices/demo
+
+将手机ROOT以后，取到可用的recovery.img或者recovery.fstab，放到机型根目录，执行以下命令生成一个新的机型工程。
+
     makeconfig
     make newproject
 
