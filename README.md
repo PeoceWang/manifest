@@ -6,7 +6,7 @@
 
    <b>Coron</b>, 意味着与开发者合作而生的ROM, <b>CO</b>-operation <b>ROm</b>；
 
-   <b>Coron</b>, 意味着百度云ROM强大的云服务, <b>RO</b>m <b>O</b>ver <b>C</b>loud；
+   <b>Coron</b>, 意味着百度云ROM强大的云服务, <b>ROm</b> <b>O</b>ver <b>C</b>loud；
 
    <b>Coron</b>, 也是一个清新纯净的小岛。
 
