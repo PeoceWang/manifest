@@ -92,6 +92,7 @@
 ===
 对于已有的机型, 可以自动化进行版本升级。执行以下命令: 
 
+    make clean-all
     make upgrade FROM=XX
 
 通过FROM参数指定升级的起始版本, 即所开发机型当前的ROM版本。譬如FROM=44, 表示需要从ROM44升级。
